@@ -1,0 +1,9 @@
+Buat model dan migrasi untuk kategori “ php artisan make:model Category -m “ Buka file migrasi yang baru dibuat (di ‘ database/migrations ‘) dan tambahkan
+kolom yang diperlukan untuk tabel kategori
+Jalankan perintah migrasi untuk membuat tabel kategori didatabase “ php artisan
+migrate “  Buat controller untuk mengelola operasi pada kategori “ php artisan
+make:controller CategoryController “  Buka controller yang baru dibuat (di ‘ app/Http/Controllers’ ) 
+Buat tampilan untuk menampilkan kategori, menambah kategori baru, mengedit, dan menghapus. Letakkan pada tampilan di direktori “ ‘ resources/views/categories ’
+‘ index.blade.php ‘ untuk menampilkan semua kategori ‘ create.blade.php ‘ untuk formulir penambahan kategori baru
+‘ edit.blade.php ‘ untuk formulir pengedit kategori
+Tentukan rute di file ‘ web.php ‘ untuk setiap fungsi di controller “ Route::resource('/categories', 'CategoryController'); “  Jalankan aplikasi laravel “ php artisan serve “

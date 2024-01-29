@@ -1,0 +1,25 @@
+Buat model dan migrasi untuk tabel tag “ php artisan make:model Tag -m “  Buka file migrasi yang baru dibuat ( di ‘ database/migrations’ ) dan tambahkan
+kolom yang diperlukan
+“ public function up()
+{
+Schema::create('tags', function (Blueprint $table) {
+$table->id();
+$table->string('name');
+$table->timestamps();
+});
+} “ 
+ Jalankan migrasi untuk membuat tabel tag di database “ php artisan migrate “  Buat controller untuk mengelola operasi terkait “ php artisan make:controller
+TagController “  Buka controller yang baru dibuat (di ‘ app/Http/Controllers/TagController.php ‘)
+dan tambahkan logika untuk menambahkan tag
+“ use App\Models\Tag;
+public function addTag(Request $request)
+{
+$tagName = $request->input('name');
+Tag::create(['name' => $tagName]);
+return response()->json(['message' => 'Tag added successfully']);
+} “  Tentukan rute untuk controller di file ‘ web.php ‘ “ Route::post('/add-tag', 'TagController@addTag'); “ 
+ Buat formulir/ antarmuka pengguna untuk mengirimkan permintaan endpoint
+yang ditentukan pada langkah diatas
+ Tambahkan validasi pada controller untuk memastikan data yang dimasukkan
+sesuai gunakan validator class
+ Jalankan aplikasi laravel untuk melihat hasilnya “ php artisan serve “

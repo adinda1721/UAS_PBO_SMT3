@@ -1,0 +1,12 @@
+Buat model migrasi untuk produk “ php artisan make:model Product -m “ Buka file migrasi yang baru dibuat (di ‘ database/migrations’ ) dan tambahkan
+kolom yang diperlukan untuk tabel produk
+Jalankan perintah migrasi untuk membuat tabel produk di database “ php artisan
+migrate “ 
+Buat controller untuk mengelola operasi pada produk “ php artisan
+make:controller ProductController “  Buka controller yang baru dibuat (di ‘ app/Http/Controllers ‘) dan
+implementasikan logika bisnis untuk operasi pada produk
+Buat tampilan untuk menapilkan produk,menambah produk baru, mengedit, dan
+menghapus. Letakkan file tampilan di direktori “ ‘ resources/views/products ‘
+‘ index.blade.php ‘ untuk menampilkan semua produk
+‘ create.blade.php ‘ untuk formulir penambahan produk baru
+‘ edit.blade.php ‘ untuk formulir pengeditan produk “  Tentukan rute di file ‘ web.php ‘ untuk setiap fungsi controller “ Route::resource('/products', 'ProductController'); “  Jalankan aplikasi laraver “ php artisan serve “
