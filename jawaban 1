@@ -1,0 +1,20 @@
+Buat database
+Buat koneksi database di file ‘.env’
+diterminal
+    php artisan make:model Category -m
+    php artisan make:model Tag -m
+    php artisan make:model User -m “ Buka masing-masing file migrasi (di ‘database/migrations’ ) dan definisikan
+struktur tabel untuk setiap entitas
+Jalankan migrasi untuk membuat tabel di database “ php artisan migrate “ 
+Buat controller untuk mengelola operasi terkait dengan setiap entitas “ php artisan make:controller DashboardController
+    php artisan make:controller ProductController
+    php artisan make:controller CategoryController
+    php artisan make:controller TagController
+    php artisan make:controller UserController “  Buka controller yang baru dibuat ( di ‘app/Http/Controllers’ ) 
+Tentukan rute di file ‘ web.php’ “ Route::get('/dashboard', 'DashboardController@index');
+    Route::resource('/products', 'ProductController');
+    Route::resource('/categories', 'CategoryController');
+    Route::resource('/tags', 'TagController');
+    Route::resource('/users', 'UserController'); “ 
+Buat tampilan untuk setiap bagian dari aplikasi, seperti halaman dashboard, produk, kategori, tag, dan pengguna
+Jalankan aplikasi laravelnnya “ php artisan serve “
